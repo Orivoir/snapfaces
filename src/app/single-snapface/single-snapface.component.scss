@@ -1,0 +1,35 @@
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & mat-card {
+    margin: 15px 0;
+    width: 50vw;
+    max-width: 800px;
+    min-width: 320px;
+    position: relative;
+    transition: filter .150s linear;
+  }
+
+  & mat-card-actions button.btn-snap {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(25%, 25%);
+  }
+
+  & mat-card-actions button.btn-unsnap {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(25%, -25%);
+  }
+
+}
+
+@media screen and (max-width: 640px) {
+  mat-chip-list {
+    display: none;
+  }
+}

@@ -1,0 +1,54 @@
+<section>
+  <mat-card *ngIf="snapface !== null" [ngClass]="{snaped: snapface.hasSnaped}">
+    <mat-card-header>
+      <mat-card-title>{{snapface.title}}</mat-card-title>
+      <mat-card-subtitle>
+        {{snapface.createAtUI}}
+      </mat-card-subtitle>
+
+      <mat-chip-list>
+        <mat-chip *ngFor="let tag of snapface.tags">#{{tag}}</mat-chip>
+      </mat-chip-list>
+    </mat-card-header>
+
+    <img mat-card-image [src]="snapface.imageUrl" alt="{{snapface.tags}}" />
+
+    <mat-card-content>
+      <p>{{snapface.describe}}</p>
+
+      <div *ngIf="!!snapface.comment">
+        <mat-divider inset></mat-divider>
+        <p>{{snapface.comment}}</p>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button
+        @hasSnaped
+        @hasUnsnaped
+        matTooltip="Favorite snap"
+        class="btn-snap"
+        *ngIf="!snapface.hasSnaped"
+        (click)="onFavoriteSnap()"
+        mat-fab
+        color="primary"
+        aria-label="favorite snap">
+        <mat-icon>favorite</mat-icon>
+      </button>
+
+      <button
+        @hasSnaped
+        @hasUnsnaped
+        matTooltip="Unfavorite snap"
+        class="btn-unsnap"
+        *ngIf="snapface.hasSnaped"
+        (click)="onUnFavoriteSnap()"
+        mat-mini-fab
+        aria-label="unfavorite snap">
+        <mat-icon>remove</mat-icon>
+      </button>
+
+
+    </mat-card-actions>
+  </mat-card>
+</section>
