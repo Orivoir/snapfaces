@@ -1,0 +1,19 @@
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0px;
+}
+
+.container-next {
+
+  width: 70vw;
+  min-width: 300px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+
+  & button {
+    width: 50%;
+  }
+}
