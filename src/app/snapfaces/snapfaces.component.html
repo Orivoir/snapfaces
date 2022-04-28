@@ -1,0 +1,31 @@
+<div class="container" *ngFor="let snapface of snapfaces">
+  <mat-card>
+    <div>
+      <mat-card-title>{{snapface.title}}</mat-card-title>
+
+      <mat-card-content>
+          <mat-chip-list>
+            <mat-chip *ngFor="let tag of snapface.tags">
+              #{{tag}}
+            </mat-chip>
+          </mat-chip-list>
+      </mat-card-content>
+    </div>
+
+    <mat-divider inset></mat-divider>
+
+    <mat-card-actions [align]="'end'">
+      <button
+        [matBadge]="snapface.countSnaps"
+        matBadgeSize="medium"
+        matBadgePosition="after"
+        matBadgeColor="accent"
+        [matBadgeHidden]="snapface.countSnaps === 0"
+        mat-stroked-button
+        (click)="onViewSnapface(snapface.id)">
+          {{"view" | uppercase}}
+      </button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>

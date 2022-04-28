@@ -1,0 +1,22 @@
+.container {
+
+  width: 75vw;
+  min-width: 300px;
+  margin: auto;
+
+  & > mat-card {
+    margin: 16px 10px;
+
+    & > div {
+      display: flex;
+      align-items: center;
+      // justify-content: space-evenly;
+      gap: 0 16px;
+    }
+  }
+
+  & mat-card-title {
+    margin-bottom: 16px;
+  }
+
+}
