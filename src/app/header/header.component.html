@@ -1,0 +1,18 @@
+<header>
+
+  <!-- floating action button -->
+  <div class="container-fab">
+    <button
+      mat-fab color="primary"
+      aria-label="create amazing snapface"
+      (click)="onCreateSnapface()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <!-- app bar -->
+  <mat-toolbar>
+    <span>{{title | titlecase}}</span>
+  </mat-toolbar>
+
+</header>

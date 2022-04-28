@@ -1,0 +1,10 @@
+header {
+  position: relative;
+
+  & .container-fab {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(-100%, 50%);
+  }
+}
