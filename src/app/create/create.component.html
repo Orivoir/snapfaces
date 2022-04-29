@@ -1,0 +1,64 @@
+<section>
+  <form (submit)="onSubmitSnapface()" [formGroup]="snapfaceForm">
+
+    <mat-form-field appearance="fill">
+      <mat-label>title</mat-label>
+      <input formControlName="title" id="title" name="title" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>describe</mat-label>
+      <input formControlName="describe" id="describe" name="describe" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>image url</mat-label>
+      <input
+        formControlName="imageUrl"
+        id="imageUrl"
+        name="imageUrl"
+        matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>comment</mat-label>
+      <input formControlName="comment" id="comment" name="comment" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>tags</mat-label>
+      <mat-chip-list #chipTagList aria-label="snapface tags">
+        <mat-chip *ngFor="let tag of tags" (removed)="onRemoveTag(tag)">
+          #{{tag}}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+        <input
+          placeholder="New tag"
+          [matChipInputFor]="chipTagList"
+          (matChipInputTokenEnd)="onNewTag($event)">
+      </mat-chip-list>
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        [disabled]="snapfaceForm.invalid"
+        aria-label="create snapface"
+        color="primary">
+        create snapface
+      </button>
+
+      <button
+        mat-raised-button
+        type="button"
+        matTooltip="back to snapfaces list"
+        aria-label="back to snapfaces list"
+        (click)="onNavigationBack()">
+        cancel
+      </button>
+    </mat-card-actions>
+
+  </form>
+</section>
