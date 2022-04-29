@@ -51,6 +51,7 @@ export class SingleSnapfaceComponent implements OnInit {
 
   constructor(
     private snapfaceApiService: SnapfaceApiService,
+    private router: Router,
     private route: ActivatedRoute,
     private location: Location) { }
 
@@ -63,6 +64,10 @@ export class SingleSnapfaceComponent implements OnInit {
       console.warn(`cant get snapface for id "${snapfaceId}"`)
       this.location.back()
     }
+  }
+
+  onNavigationBack(): void {
+    this.router.navigateByUrl("snapfaces")
   }
 
   onFavoriteSnap(): void {

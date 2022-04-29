@@ -19,6 +19,14 @@ section {
     transform: translate(25%, 25%);
   }
 
+  & mat-card-actions button.btn-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-33%, -33%);
+    filter: brightness(.85);
+  }
+
   & mat-card-actions button.btn-unsnap {
     position: absolute;
     right: 0;

@@ -12,7 +12,6 @@
     </mat-card-header>
 
     <img mat-card-image [src]="snapface.imageUrl" alt="{{snapface.tags}}" />
-
     <mat-card-content>
       <p>{{snapface.describe}}</p>
 
@@ -39,6 +38,7 @@
       <button
         @hasSnaped
         @hasUnsnaped
+        [matBadge]="snapface.countSnaps"
         matTooltip="Unfavorite snap"
         class="btn-unsnap"
         *ngIf="snapface.hasSnaped"
@@ -48,6 +48,14 @@
         <mat-icon>remove</mat-icon>
       </button>
 
+      <button
+        matTooltip="back to snapface list"
+        class="btn-back"
+        mat-mini-fab
+        aria-label="back navigation"
+        (click)="onNavigationBack()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
 
     </mat-card-actions>
   </mat-card>
