@@ -3,6 +3,9 @@ section {
   justify-content: center;
   align-items: center;
   margin: 12px 0px;
+  & img {
+    background-color: rgba($color: #FFF, $alpha: .42);
+  }
 }
 
 .container-next {
