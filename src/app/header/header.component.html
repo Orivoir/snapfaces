@@ -6,7 +6,8 @@
       mat-fab color="primary"
       aria-label="create amazing snapface"
       (click)="onCreateSnapface()">
-      <mat-icon>add</mat-icon>
+      <mat-icon *ngIf="!isCreateRoute">add</mat-icon>
+      <mat-icon *ngIf="isCreateRoute">home</mat-icon>
     </button>
   </div>
 
